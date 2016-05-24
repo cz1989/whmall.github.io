@@ -46,15 +46,9 @@ layout: default
                         </div>
                   </td>
                   <td>$100.00/5.0g, VAT(17%)</td>
-                  <td>
-                    <div class="ui form">
-                      <div class="inline fields">
-                        <div class="eight field">
-                          <label>Lead Date:</label>
-                          <input placeholder="First Name" type="text">
-                        </div>
-                      </div>
-                    </div>
+                  <td class="ui form">
+                        <label>Lead Date:</label>
+                        <input placeholder="First Name" type="text">
                   </td>
                   <td>
                         <label>Payment Terms:</label>
@@ -83,15 +77,9 @@ layout: default
                         </div>
                   </td>
                   <td>$100.00/5.0g, VAT(17%)</td>
-                  <td>
-                    <div class="ui form">
-                      <div class="inline fields">
-                        <div class="eight field">
-                          <label>Lead Date:</label>
-                          <input placeholder="First Name" type="text">
-                        </div>
-                      </div>
-                    </div>
+                  <td class="ui form">
+                     <label>Lead Date:</label>
+                        <input placeholder="First Name" type="text">
                   </td>
                   <td>
                         <label>Payment Terms:</label>
@@ -127,71 +115,51 @@ layout: default
                <h4>STEP 2: Shipping Address Confirmation</h4>
             </div>
             <div class="right floated four wide column text_align_right pt_4">
-                <div class="ui yellow button mr_w_15 ">Upload PO File</div>
+                <div class="ui yellow button mr_w_15 " id="J_add_modal">New</div>
             </div>
         </div>
-        <div class="ui form ">
-           <div class="ui three column grid">
-                <div class="column">
-                  <label>Nation:</label>
-                  <input placeholder="First Name" type="text">
-                </div>
-                <div class="column">
-                  <label>Province/State:</label>
-                  <input placeholder="中间名" type="text">
-                </div>
-                <div class="column">
-                  <label>City:</label>
-                  <input placeholder="Last Name" type="text">
+        <div class="ui medium image actives_border address">
+            <a class="ui yellow right corner label">
+                <i class="checkmark icon"></i>
+            </a>
+            <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui yellow button">Set Default</div>
+                    <div class="ui button" id="J_order_edit">Edit</div>
+                  </div>
                 </div>
             </div>
-            <div class="ui three column grid">
-                <div class="column">
-                  <label>Contacts Name:</label>
-                  <input placeholder="First Name" type="text">
-                </div>
-                <div class="column">
-                  <label>Phone:</label>
-                  <input placeholder="中间名" type="text">
-                </div>
-                <div class="column">
-                  <label>Email:</label>
-                  <input placeholder="Last Name" type="text">
+            <div class="ui card">
+                <div class="content">
+                    <span class="name mr_w_15">lydia</span>
+                    <span>15000740028</span>
+                    <div class="ui clearing divider"></div>
+                    <p>795 Folsom Ave, Suite 600</p>
+                    <p> San Francisco, CA 94107</p>
+                    <p>Email: info@a</p>
                 </div>
             </div>
-            <div class="ui column grid">
-                <div class="column">
-                  <label>Address:</label>
-                  <textarea></textarea>
+        </div>
+        <div class="ui medium image  address">
+            <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui yellow button">Set Default</div>
+                    <div class="ui button">Edit</div>
+                  </div>
                 </div>
             </div>
-            <div class="ui six column grid">
-                <div class="column">
-                  <input type="radio" name="fruit">
-                  <label>Shipping Address:</label>
-                </div>
-                <div class="column">
-                  <input type="radio" name="fruit">
-                  <label>Forwarder Address</label>
-                </div>
-                <div class="column">
-                    <div class="ui search dropdown selection">
-                        <select>
-                            <option value="">Country</option>
-                            <option value="AL">A</option>
-                            <option value="AL">B</option>
-                        </select>
-                        <i class="dropdown icon"></i>
-                        <input class="search" tabindex="0">
-                        <div class="default text">Country</div>
-                        <div class="menu transition hidden" tabindex="-1">
-                            <div class="item selected" data-value="AL">A</div>
-                            <div class="item" data-value="AL">B</div>
-                        </div>
-                    </div>
+            <div class="ui card">
+                <div class="content">
+                    <span class="name mr_w_15">lydia</span>
+                    <span>15000740028</span>
+                    <div class="ui clearing divider"></div>
+                    <p>795 Folsom Ave, Suite 600</p>
+                    <p> San Francisco, CA 94107</p>
+                    <p>Email: info@a</p>
                 </div>
             </div>
-            
         </div>
     </div>
     <div class="ui middle center aligned grid">
@@ -200,11 +168,99 @@ layout: default
             <div class="ui button">Cancel</div>
         </div>
     </div>
+    <!-- 弹出窗 -->
+    <div class="ui fullscreen modal transition hidden" id="order_modal" style="margin-top: -213px;">
+        <i class="close icon"></i>
+        <div class="header">
+            <a> Select Shipping Address</a>
+        </div>
+        <div class="content">
+            <div class="ui form ">
+                <div class="ui two column grid">
+                    <div class="column">
+                      <label>Nation:</label>
+                      <input placeholder="First Name" type="text">
+                    </div>
+                    <div class="column">
+                      <label>Province/State:</label>
+                      <input placeholder="中间名" type="text">
+                    </div>
+                </div>
+                <div class="ui two column grid">
+                    <div class="column">
+                      <label>City:</label>
+                      <input placeholder="Last Name" type="text">
+                    </div>
+                    <div class="column">
+                      <label>Contacts Name:</label>
+                      <input placeholder="First Name" type="text">
+                    </div>
+                </div>
+                <div class="ui two column grid">
+                    <div class="column">
+                      <label>Phone:</label>
+                      <input placeholder="中间名" type="text">
+                    </div>
+                    <div class="column">
+                      <label>Email:</label>
+                      <input placeholder="Last Name" type="text">
+                    </div>
+                </div>
+                <div class="ui column grid">
+                    <div class="column">
+                      <label>Address:</label>
+                      <textarea></textarea>
+                    </div>
+                </div>
+                <div class="ui six column grid">
+                    <div class="column">
+                      <input type="radio" name="fruit">
+                      <label>Shipping Address:</label>
+                    </div>
+                    <div class="column">
+                      <input type="radio" name="fruit">
+                      <label>Forwarder Address</label>
+                    </div>
+                    <div class="column">
+                        <div class="ui search dropdown selection">
+                            <select>
+                                <option value="">Country</option>
+                                <option value="AL">A</option>
+                                <option value="AL">B</option>
+                            </select>
+                            <i class="dropdown icon"></i>
+                            <input class="search" tabindex="0">
+                            <div class="default text">Country</div>
+                            <div class="menu transition hidden" tabindex="-1">
+                                <div class="item selected" data-value="AL">A</div>
+                                <div class="item" data-value="AL">B</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+          <div class="ui blue button">Confirm</div>
+        </div>
+    </div>
 
 </div>
 <script type="text/javascript" >
     $('.search.dropdown').dropdown();
     $('.button').popup();
     $('i.icon').popup();
+
+    $('.image').dimmer({
+        on: 'hover'
+    });
+
+    $('#J_add_modal').on('click',function(){
+        $('#order_modal').modal('show');
+    });
+
+    $('#J_order_edit').on('click',function(){
+        $('#order_modal').modal('show');
+    });
 </script>
 

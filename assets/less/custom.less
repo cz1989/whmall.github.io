@@ -1,4 +1,10 @@
 
+/*引用全局变量*/
+@import "../variables/default/globals/site.variables";
+/*引用自定义变量*/
+@import "../variables/default/elements/custom.variables";
+
+
 /*自定义颜色*/
 .table_color_f8ffff{
     background-color: #f8ffff !important;
@@ -147,4 +153,27 @@
 }
 .ui[class*="top attached"].menu{
 	border-top: 0;
+}
+
+/*生成订单*/
+.ui .dimmable .card{
+    width: 100%;
+    margin: 0;
+    box-shadow: 0px 0px 0px 0px @yellow;
+}
+.address{
+    border: 2px solid @PaleGrey;
+    font-size: 14px;
+    border-radius: 0.28571429rem;
+}
+.address .name{
+    font-size: 1.5rem;
+    color: #666;
+}
+.actives_border{
+    border: 2px solid @yellow;
+    border-radius: 0.28571429rem;
+}
+.header .blue{
+    color: @blue !important;
 }
